@@ -62,7 +62,7 @@
       <li>TripEase does <strong>not</strong> require you to create an account.</li>
       <li>We do <strong>not</strong> use a third-party analytics SDK, do <strong>not</strong> show ads in the app, and do <strong>not</strong> track your device location.</li>
       <li>Your optional travel profile (passport details), trips and checklists are stored <strong>only on your device</strong>. Passport details are kept in the device’s secure storage (iOS Keychain / Android Keystore). We never receive them.</li>
-      <li>Passport scanning reads the machine-readable lines on your device. No photo is taken, stored or uploaded. The on-device text-recognition component (Google ML Kit) sends Google limited diagnostic data that contains no images or passport text (see 5.4).</li>
+      <li>Passport scanning reads the machine-readable lines entirely on your device and sends nothing to anyone: no photo, no text, no diagnostics. No photo is taken or stored.</li>
       <li>TripEase never fills in, sends or stores a government form for you. Visa and arrival-form buttons open the official sites.</li>
       <li>Travel content (countries, airports, forms, advisories) is loaded from Firebase / Firestore operated by Google.</li>
       <li>Optional TripEase Pro subscriptions are processed by Apple or Google via RevenueCat. We receive an anonymous purchase identifier and purchase status — not your full payment card details.</li>
@@ -98,7 +98,7 @@
 
     <h3 id="camera">3.4 Camera and passport scanning</h3>
     <p>
-      The camera is used only when you tap “Scan passport”, to read the two machine-readable lines at the bottom of your passport photo page. Recognition runs on your device using Google ML Kit’s on-device text recognition. No photo is taken, saved or uploaded; camera frames are processed in memory and discarded. You review and edit every field before anything is saved, and you can always type the details instead. TripEase does not record audio and does not read the passport chip (NFC).
+      The camera is used only when you tap “Scan passport”, to read the two machine-readable lines at the bottom of your passport photo page. Recognition runs entirely on your device: on iPhone and iPad with Apple’s built-in Vision text recognition, and on Android with the open-source Tesseract OCR engine bundled in the app. The scanner makes no network requests and sends nothing to us, Google, Apple or anyone else: no images, no recognised text and no diagnostic or usage data. No photo is taken, saved or uploaded; camera frames are processed in memory and discarded. You review and edit every field before anything is saved, and you can always type the details instead. TripEase does not record audio and does not read the passport chip (NFC).
     </p>
 
     <h3>3.5 Purchases (TripEase Pro)</h3>
@@ -158,17 +158,12 @@
       If the app displays map tiles from OpenStreetMap, requests go to OpenStreetMap’s tile infrastructure (or a configured tile provider). Those requests typically include your IP address. OpenStreetMap’s usage policies and privacy notices apply to that traffic.
     </p>
 
-    <h3 id="mlkit">5.4 Google ML Kit (passport scanning)</h3>
-    <p>
-      Passport scanning uses Google ML Kit text recognition with the recognition model bundled in the app, so the text is read on your device and camera images and recognised text are not sent to Google or to us. Like other Google ML Kit features, it may send Google diagnostic and usage information to help Google maintain and improve ML Kit, such as device and app information (for example device model, OS and app version), per-installation identifiers, performance metrics and error information. This data contains no images, no recognised text and no passport details. See Google’s ML Kit data disclosures for <a href="https://developers.google.com/ml-kit/android-data-disclosure">Android</a> and <a href="https://developers.google.com/ml-kit/ios-data-disclosure">iOS</a>, the <a href="https://developers.google.com/ml-kit/terms">ML Kit terms</a> and Google’s <a href="https://policies.google.com/privacy">privacy policy</a>.
-    </p>
-
-    <h3>5.5 Website hosting</h3>
+    <h3>5.4 Website hosting</h3>
     <p>
       This website is hosted on GitHub Pages. When you visit the site, GitHub may process standard server logs (such as IP address and browser type) under GitHub’s privacy policy.
     </p>
 
-    <h3>5.6 Legal requirements</h3>
+    <h3>5.5 Legal requirements</h3>
     <p>
       We may disclose information if required by law, regulation, legal process, or governmental request, or to protect the rights, safety, and integrity of TripEase and its users.
     </p>
