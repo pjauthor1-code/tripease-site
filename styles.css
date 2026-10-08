@@ -359,7 +359,7 @@ h1 {
 .footer-links a:hover { color: var(--ink); }
 .disclosure a { color: var(--muted); }
 .disclosure {
-  margin-top: 1rem;
+  margin: 1rem 0 0;
   max-width: 46rem;
   font-size: 0.86rem;
 }
