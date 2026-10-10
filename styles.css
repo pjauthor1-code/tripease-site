@@ -19,6 +19,9 @@
   --accent: #0A756C;
   --accent-hover: #085E57;
   --accent-soft: #DDEFF0;
+  /* Coral: brand accent matching the app icon. Decoration only (heading rule),
+     never text (3.1:1 on --bg) and never a state or button. */
+  --coral: #E8604A;
   --signal: #FFCC00;
   --on-signal: #1C2126;
   --neutral-tint: #ECEEEB;
@@ -89,11 +92,7 @@ a:hover { color: var(--accent-hover); }
   width: 36px;
   height: 36px;
   border-radius: 9px;
-  background: var(--brand);
-  color: #FFFFFF;
-  display: grid;
-  place-items: center;
-  font-size: 0.95rem;
+  display: block;
 }
 .nav-links {
   display: flex;
@@ -229,6 +228,17 @@ h1 {
   margin: 0 0 0.55rem;
   font-size: 1.8rem;
   letter-spacing: -0.01em;
+}
+/* Short coral rule under section headings, as in the app. */
+.section h2::after,
+.legal h2::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin-top: 0.3rem;
+  border-radius: 2px;
+  background: var(--coral);
 }
 .section-intro {
   margin: 0 0 1.5rem;
